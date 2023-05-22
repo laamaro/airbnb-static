@@ -13,6 +13,8 @@ class FlatsController < ApplicationController
     @flat = @flats.find {|flat| flat["id"] == params[:id].to_i }
   end
 
+  private
+
   def set_flats
     url = "https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/flats.json"
     @flats = JSON.parse(URI.open(url).read)
