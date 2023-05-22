@@ -1,0 +1,15 @@
+<h1>Flats</h1>
+
+<form action="/">
+  <input type="text" name="flat_name">
+  <input type="submit">
+</form>
+
+<ul>
+  <% @flats.each do |flat| %>
+    <li>
+      <h2><%= link_to flat["name"], flat_path(flat["id"]) %></h2>
+      <p>💰 <%= flat["price"] %> <%= flat["priceCurrency"] %></p>
+    </li>
+  <% end %>
+</ul>
